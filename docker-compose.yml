@@ -22,3 +22,4 @@ volumes:
 networks:
   demo-app-network:
     driver: bridge
+    
