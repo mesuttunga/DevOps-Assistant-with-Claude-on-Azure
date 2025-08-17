@@ -25,7 +25,7 @@
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="chat-tab" data-bs-toggle="tab" data-bs-target="#chat" type="button">
-                            💬 Infrastructure Q&A
+                            💬 Infrastructure Q & A
                         </button>
                     </li>
                 </ul>
