@@ -7,7 +7,7 @@ AI-powered DevOps assistant that analyzes deployment logs and answers infrastruc
 - **Log Analyzer**: Paste your deployment or error logs, get instant analysis with root cause and solutions
 - **Infrastructure Q&A**: Ask questions about Docker, Kubernetes, Azure, CI/CD, monitoring, and more
 - **Powered by Claude Sonnet 4**: Latest AI model from Anthropic
-- **Deployed on Azure**: Running on Azure Container Apps
+- **Ready for Azure**: Dockerized and deployment scripts included
 
 ## 🚀 Quick Start
 
@@ -15,8 +15,8 @@ AI-powered DevOps assistant that analyzes deployment logs and answers infrastruc
 
 1. **Clone the repo**
 ```bash
-git clone https://github.com/mesuttunga/devops-assistant.git
-cd devops-assistant
+git clone https://github.com/mesuttunga/DevOps-Assistant-with-Claude-on-Azure.git
+cd DevOps-Assistant-with-Claude-on-Azure
 ```
 
 2. **Set up environment**
@@ -32,7 +32,7 @@ docker-compose up -d
 
 4. **Open browser**
 ```
-http://localhost:8080
+http://localhost:8095
 ```
 
 ### Deploy to Azure
@@ -63,14 +63,6 @@ chmod +x azure-deploy.sh
 - **Cloud**: Azure Container Apps
 - **Container**: Docker
 
-## 📸 Screenshots
-
-### Log Analyzer
-![Log Analyzer Demo](https://github.com/mesuttunga/DevOps-Assistant-with-Claude-on-Azure/blob/main/images/log-analyzer.png)
-
-### Infrastructure Q&A
-![Chat Demo](https://github.com/mesuttunga/DevOps-Assistant-with-Claude-on-Azure/blob/main/images/chat-demo.png)
-
 ## 🧪 Example Use Cases
 
 ### Log Analysis
@@ -90,7 +82,7 @@ Q: "Help me debug this Kubernetes pod crash"
 
 ## 🔐 Security
 
-- API keys stored as Azure secrets
+- API keys stored as environment variables (Azure secrets in production)
 - No logs stored permanently
 - HTTPS only in production
 
@@ -101,10 +93,10 @@ MIT
 ## 👤 Author
 
 **Mesut Tunga**
-- Email: mesut@tunga.com
-- LinkedIn: https://www.linkedin.com/in/mesuttunga/
-- GitHub: @mesuttunga
+- LinkedIn: [linkedin.com/in/mesuttunga](https://www.linkedin.com/in/mesuttunga/)
+- GitHub: [@mesuttunga](https://github.com/mesuttunga)
 
 ---
+<!-- Added a note about recommended max log size for the analyzer -->
 
 Built with ❤️ to demonstrate Claude + Azure integration
