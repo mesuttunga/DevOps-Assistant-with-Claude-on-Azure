@@ -6,7 +6,7 @@ FROM php:8.2-apache
 # ==============================================
 # SYSTEM DEPENDENCIES
 # ==============================================
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get clean && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
