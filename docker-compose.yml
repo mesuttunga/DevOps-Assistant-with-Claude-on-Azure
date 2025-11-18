@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: DevOps-Assistant
+    ports:
+      - "8095:80"
+    env_file:
+      - .env
+    volumes:
+      - ./:/var/www/html
+      - ./logs:/var/www/html/logs
+    networks:
+      - demo-app-network
+    restart: unless-stopped
+
+volumes:
+  app_logs:
+    driver: local
+
+networks:
+  demo-app-network:
+    driver: bridge

@@ -1,0 +1,71 @@
+/* css/custom.css */
+
+body {
+    background-color: #f8f9fa;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.card {
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    border-radius: 8px;
+}
+
+.card-header {
+    border-radius: 8px 8px 0 0 !important;
+}
+
+textarea.form-control {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+
+#logResultContent pre {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #28a745;
+}
+
+#chatMessages .alert {
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+#chatMessages .alert-primary {
+    background-color: #e7f3ff;
+    border-color: #b3d7ff;
+    color: #004085;
+}
+
+#chatMessages .alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.btn-primary {
+    background-color: #0066cc;
+    border-color: #0066cc;
+}
+
+.btn-primary:hover {
+    background-color: #0052a3;
+    border-color: #0052a3;
+}
+
+footer {
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid #dee2e6;
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 5px;
+}
