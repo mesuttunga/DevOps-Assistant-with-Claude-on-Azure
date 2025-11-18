@@ -65,7 +65,11 @@ chmod +x azure-deploy.sh
 
 ## 📸 Screenshots
 
-[Add screenshots here]
+### Log Analyzer
+![Log Analyzer Demo](https://github.com/mesuttunga/DevOps-Assistant-with-Claude-on-Azure/blob/main/images/log-analyzer.png)
+
+### Infrastructure Q&A
+![Chat Demo](https://github.com/mesuttunga/DevOps-Assistant-with-Claude-on-Azure/blob/main/images/chat-demo.png)
 
 ## 🧪 Example Use Cases
 
