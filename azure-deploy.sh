@@ -1,19 +1,42 @@
 #!/bin/bash
 # azure-deploy.sh - Deploy to Azure Container Apps
 
+# TESTED & WORKING ✅
+# This script has been successfully tested and deployed.
+#
+# Prerequisites:
+# - Azure CLI installed and logged in (az login)
+# - Docker installed and running
+# - CLAUDE_API_KEY environment variable set
+#
+# Usage:
+#   export CLAUDE_API_KEY="your-api-key-here"
+#   ./azure-deploy.sh
+#
+# To cleanup: az group delete --name devops-assistant-rg --yes --no-wait
+
 set -e
 
-# Configuration
+# Configuration - Updated with unique names
 RESOURCE_GROUP="devops-assistant-rg"
 LOCATION="westeurope"
 CONTAINER_APP_NAME="devops-assistant"
-CONTAINER_REGISTRY="devopsassistantacr"
+CONTAINER_REGISTRY="devopsacr$RANDOM"  # Random suffix for uniqueness
 IMAGE_NAME="devops-assistant"
 ENVIRONMENT="devops-env"
 
 echo "🚀 Starting Azure deployment..."
+echo "📋 Using Resource Group: $RESOURCE_GROUP"
+echo "📋 Container Registry: $CONTAINER_REGISTRY"
 
-# 1. Login to Azure (if not already logged in)
+# Check if CLAUDE_API_KEY is set
+if [ -z "$CLAUDE_API_KEY" ]; then
+    echo "❌ Error: CLAUDE_API_KEY environment variable is not set"
+    echo "   Run: export CLAUDE_API_KEY='your-key-here'"
+    exit 1
+fi
+
+# 1. Login check
 echo "📝 Checking Azure login..."
 az account show > /dev/null 2>&1 || az login
 
@@ -76,7 +99,10 @@ echo "✅ Deployment complete!"
 echo "🌐 Your app is live at: https://$APP_URL"
 echo ""
 echo "💡 To update the app:"
-echo "   1. Make your changes"
-echo "   2. Run: docker build -t $IMAGE_NAME:latest ."
-echo "   3. Run: docker push $CONTAINER_REGISTRY.azurecr.io/$IMAGE_NAME:latest"
-echo "   4. Run: az containerapp update --name $CONTAINER_APP_NAME --resource-group $RESOURCE_GROUP"
+echo "   docker build -t $IMAGE_NAME:latest ."
+echo "   docker tag $IMAGE_NAME:latest $CONTAINER_REGISTRY.azurecr.io/$IMAGE_NAME:latest"
+echo "   docker push $CONTAINER_REGISTRY.azurecr.io/$IMAGE_NAME:latest"
+echo "   az containerapp update --name $CONTAINER_APP_NAME --resource-group $RESOURCE_GROUP"
+echo ""
+echo "🗑️  To cleanup (delete all resources):"
+echo "   az group delete --name $RESOURCE_GROUP --yes --no-wait"

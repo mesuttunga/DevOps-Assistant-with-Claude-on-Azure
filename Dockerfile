@@ -49,7 +49,7 @@ WORKDIR /var/www/html
 # ==============================================
 # COPY APPLICATION FILES
 # ==============================================
-# COPY . /var/www/html
+COPY . /var/www/html
 
 # ==============================================
 # SET PERMISSIONS FOR COMMON DIRECTORIES
